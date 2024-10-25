@@ -40,6 +40,15 @@ body {
 
 
 }
+
+.logo-assistech a {
+    font-family: "Assistech";
+    font-size: 40px;
+    font-weight: bolder;
+    padding-right: 100px;
+    text-shadow: 3px 0px 3px aqua;
+
+}
 .search-bar {
     flex-grow: 1;
     margin-right: 20px;
@@ -180,4 +189,61 @@ footer {
     background-color: #0223a3 ;
     padding: 10px;
     text-align: center;
+}
+
+/* ------------------------------------------------------PÁGINA NOTEBOOK-----------------------------------------*/
+
+#pag-sec-note {
+    font-size: 40px;
+    margin-top: 55px;
+    text-shadow: none;
+}
+
+/* ------------------------------------------------------PÁGINA CELULAR-----------------------------------------*/
+
+
+#pag-sec-cel {
+    font-size: 40px;
+    margin-top: 55px;
+    text-shadow: none;
+}
+
+/* ------------------------------------------------------PÁGINA COMPUTADOR-----------------------------------------*/
+
+#pag-sec-com {
+    font-size: 40px;
+    margin-top: 55px;
+    text-shadow: none;
+}
+
+/* ------------------------------------------------------PÁGINA TABLET-----------------------------------------*/
+
+#pag-sec-tab {
+    font-size: 40px;
+    margin-top: 55px;
+    text-shadow: none;
+}
+
+/* ------------------------------------------------------PÁGINA MEMÓRIA-----------------------------------------*/
+
+#pag-sec-mem {
+    font-size: 40px;
+    margin-top: 55px;
+    text-shadow: none;
+}
+
+/* ------------------------------------------------------PÁGINA PLACA DE VÍDEO-----------------------------------------*/
+
+#pag-sec-plc {
+    font-size: 40px;
+    margin-top: 55px;
+    text-shadow: none;
+}
+
+/* ------------------------------------------------------PÁGINA HD-----------------------------------------*/
+
+#pag-sec-hd {
+    font-size: 40px;
+    margin-top: 55px;
+    text-shadow: none;
 }
