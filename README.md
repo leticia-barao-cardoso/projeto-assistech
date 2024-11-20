@@ -2,12 +2,11 @@
  Projeto de um sistema e-commerce de vendas e manutenção de equipamentos tecnológicos
 
 Grupo:
-(924112664 - Leticia Araujo)
-(9241119885 - Theus)
-(Leticia Cardoso)
-(Maria)
-(Victor)
-
+(924112664 - Leticia Araujo)<br>
+(9241119885 - Theus)<br>
+(Leticia Cardoso)<br>
+(Maria)<br>
+(Victor)<br>
 
 Como acessar o site
 
