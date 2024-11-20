@@ -15,7 +15,7 @@ require('config.php')
     <title>Bem vindo à Assistech</title>
 </head>
     <header class="header">
-    <div class="logo-assistech"><a href="pagina_principal copy.html">ASSISTECH</a></div>
+    <div class="logo-assistech"><a href="index.php">ASSISTECH</a></div>
     <div class="search-bar">
         <input type="text" placeholder="O que deseja?" aria-label="Search">
     </div>
@@ -41,8 +41,10 @@ require('config.php')
     </div>
    
     </header>
+
+
     <div class="menu " >
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg ">
         <ul class="navbar-nav">
             <li><a href="notebook.html">NOTEBOOK</a></li>
             <li><a href="celular.html">CELULAR</a></li>
@@ -58,9 +60,10 @@ require('config.php')
         </ul>
     </nav>
     </div>
+
     <body>
-    <div class="titulo">
-        <h1>SEJA BEM VINDO À ASSISTECH</h1>
+    <div class="titulo text-white">
+        <h1 >SEJA BEM VINDO À ASSISTECH</h1>
     <h2>Tudo o que você precisa encontra aqui!</h2>
    <p><h2>Profissionais qualificados para prestar a melhor assistência técnica e produtos da melhor qualidade! <br>
 
@@ -85,6 +88,7 @@ Av. Paulista, 3030 - São Paulo-SP</h3>
             </div>
             </form>
         </div>
+        <!-----------------------------------PRODUTOS---------------------------------------------------------->
 
     </main>
 
