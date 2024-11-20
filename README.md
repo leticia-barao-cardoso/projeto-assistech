@@ -2,9 +2,9 @@
  Projeto de um sistema e-commerce de vendas e manutenção de equipamentos tecnológicos
 
 Grupo:
-(Leticia Cardoso)
 (924112664 - Leticia Araujo)
 (9241119885 - Theus)
+(Leticia Cardoso)
 (Maria)
 (Victor)
 
