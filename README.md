@@ -1,7 +1,7 @@
 # projeto-assistech
  Projeto de um sistema e-commerce de vendas e manutenção de equipamentos tecnológicos
 
-Grupo:
+Grupo: <br>
 (924112664 - Leticia Araujo)<br>
 (9241119885 - Theus)<br>
 (Leticia Cardoso)<br>
