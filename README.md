@@ -3,8 +3,8 @@
 
 Grupo:
 (Leticia Cardoso)
-924112664 (Leticia Araujo)
-9241119885 (Theus)
+(924112664 - Leticia Araujo)
+(9241119885 - Theus)
 (Maria)
 (Victor)
 
