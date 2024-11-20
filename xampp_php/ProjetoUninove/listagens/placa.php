@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-require('sheep_core/config.php');
+require('../sheep_core/config.php');
 
 ?>
 
@@ -10,18 +10,18 @@ require('sheep_core/config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/est.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="../css/est.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" >
     <title>Bem vindo à Assistech</title>
 </head>
     <header class="header">
-    <div class="logo-assistech"><a href="index.php">ASSISTECH</a></div>
+    <div class="logo-assistech"><a href="/ProjetoUninove/index.php">ASSISTECH</a></div>
     <div class="search-bar">
         <input type="text" placeholder="O que deseja?" aria-label="Search">
     </div>
     <div class="logo">BUSCA</div>
     <div class="header-icons">
-        <div class="icon"><a href="/ProjetoUninove/painel/addProduto.php">📍Cadaster seu produto</a ></div>
+        <div class="icon"><a href="novoquipe"></a>📍Cadaster seu produto</div>
         <div class="icon"><a href="login"></a>👤 Login</div>
         <div class="icon">❤️ Favoritos</div>
         <div class="icon">
@@ -45,17 +45,17 @@ require('sheep_core/config.php');
 
     <div class="menu " >
     <nav class="navbar navbar-expand-lg ">
-        <ul class="navbar-nav">
-            <li><a href="listagens/notebook.php">NOTEBOOK</a></li>
-            <li><a href="listagens/celular.php">CELULAR</a></li>
-            <li><a href="listagens/computador.php">COMPUTADOR</a></li>
-            <li><a href="listagens/tablet.php">TABLET</a></li>
-            <li><a href="listagens/memoria.php">MEMÓRIA RAM</a></li>
-            <li><a href="listagens/placa.php">PLACA DE VÍDEO</a></li>
-            <li><a href="listagens/hd.php">HD</a></li>
-            <li> <a href="listagens/servicos.php">ASSISTÊNCIA TÉCNICA</a></li>
-            <li> <a href="listagens/cadastro.php">CADASTRE-SE</a></li>
-            <li><a href="listagens/faleconosco.php">FALE CONOSCO</a></li>
+    <ul class="navbar-nav">
+            <li><a href="notebook.php">NOTEBOOK</a></li>
+            <li><a href="celular.php">CELULAR</a></li>
+            <li><a href="computador.php">COMPUTADOR</a></li>
+            <li><a href="tablet.php">TABLET</a></li>
+            <li><a href="memoria.php">MEMÓRIA RAM</a></li>
+            <li><a href="placa.php">PLACA DE VÍDEO</a></li>
+            <li><a href="hd.php">HD</a></li>
+            <li> <a href="servicos.php">ASSISTÊNCIA TÉCNICA</a></li>
+            <li> <a href="cadastro.php">CADASTRE-SE</a></li>
+            <li><a href="faleconosco.php">FALE CONOSCO</a></li>
         </ul>
     </nav>
     </div>
@@ -78,7 +78,7 @@ Av. Paulista, 3030 - São Paulo-SP</h3>
         <?php 
                           
                           $ler = new Ler();
-                          $ler->Leitura('produtos', "ORDER BY data DESC");
+                          $ler->Leitura('produtos', "WHERE idTipo = '6'");
                           if($ler->getResultado()){
                             foreach($ler->getResultado() as $produto){
                               $produto = (object) $produto;
