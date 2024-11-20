@@ -1,47 +1,7 @@
 <?php
 
-include("config.php");
-
-require 'Cart.php';
-require 'Product.php';
-
-session_start();
-
-session_destroy();
-die();
-
-$sql = "SELECT * FROM equipamentos";
-
-$res = $conn->query($sql);
-
-$qtd = $res->num_rows;
-
-/*
-$products = [
-  1 => ['id' => 1, 'name' => 'geladeira', 'price' => 1000, 'quantity' => 1],
-  2 => ['id' => 2, 'name' => 'mouse', 'price' => 100, 'quantity' => 1],
-  3 => ['id' => 3, 'name' => 'teclado', 'price' => 10, 'quantity' => 1],
-  4 => ['id' => 4, 'name' => 'monitor', 'price' => 5000, 'quantity' => 1],
-];
-*/
-if($qtd > 0){
-    while ($row = $res->fetch_object()){
-        if (isset($_GET['id'])) {
-        $id = strip_tags($_GET['id']);
-        $productInfo = $products[$id];
-        $product = new Product;
-        $product->setId($productInfo['id']);
-        $product->setName($productInfo['name']);
-        $product->setPrice($productInfo['price']);
-        $product->setQuantity($productInfo['quantity']);
-
-        $cart = new Cart;
-        $cart->add($product);
-        }   
-    }
-}
-
-var_dump($_SESSION['cart'] ?? []);
+ob_start();
+require('config.php')
 
 ?>
 
@@ -50,7 +10,7 @@ var_dump($_SESSION['cart'] ?? []);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="est.css">
+    <link rel="stylesheet" href="./css/est.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" >
     <title>Bem vindo à Assistech</title>
 </head>
@@ -64,7 +24,20 @@ var_dump($_SESSION['cart'] ?? []);
         <div class="icon"><a href="novoquipe"></a>📍Cadaster seu produto</div>
         <div class="icon"><a href="login"></a>👤 Login</div>
         <div class="icon">❤️ Favoritos</div>
-        <div class="icon">🛒 Carrinho</div>
+        <div class="icon">
+            <p>
+                <a class="btn btn-primary" data-toggle="collapse" href="cart.php" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                🛒 Carrinho</a>
+            </p>
+            <div class="row">
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                    </div>
+                </div>
+            </div>
     </div>
    
     </header>
@@ -99,120 +72,19 @@ var_dump($_SESSION['cart'] ?? []);
 Av. Paulista, 3030 - São Paulo-SP</h3>
 
     <main class="container">
-        <!-----------------------------------NOTEBOOK---------------------------------------------------------->
+        <!-----------------------------------PRODUTOS---------------------------------------------------------->
         
-        <div class="produto ">
-            <img src="imagens/notebook.jpg" alt="Notebook ASUS VivoBook Go 15">
-            <p class="descricao">Notebook ASUS VivoBook Go 15 E1504GA-NJ447
-            Intel Core i3 4GB RAM SSD 256GB 15,6" Full HD Linux 90NB0ZT1-M00PS0</p>
-            <br><p class="preco">R$ 3.497,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
+        <div class="produto card ">
+            <form action="filtros/criar.php" method="post">
+            <div class="card-body">
+                <img src="imagens/notebook.jpg" alt="Notebook ASUS VivoBook Go 15" class="rounded mx-auto d-block">
+                <p class="descricao">Notebook ASUS VivoBook Go 15 E1504GA-NJ447
+                Intel Core i3 4GB RAM SSD 256GB 15,6" Full HD Linux 90NB0ZT1-M00PS0</p>
+                <br><p class="preco">R$ 3.497,90</p>
+                <br><p><button class="btn btn-primary" type="submit" name="addcarrinho">Adicionar ao carrinho 🛒 </button></p>
+            </div>
+            </form>
         </div>
-
-        <div class="produto">
-            <img src="imagens/notebook01.jpg" alt="Notebook Gamer Acer Nitro V15">
-            <p class="descricao">Notebook Gamer Acer Nitro V15 Intel Core i5-13420H, 8GB RAM, 15.6" FHD IPS 144Hz, Windows 11, Preto - ANV15-51-58AZ</p>
-            <br><p class="preco">R$ 5.100,90</p>
-            <br><button class="btn">Adicionar ao carrinho 🛒 </button>
-        </div>
-  <!-----------------------------------COMPUTADOR---------------------------------------------------------->
-        <div class="produto">
-            <img src="imagens/computador.jpeg" alt="KIT - Computador Smart Pc">
-            <p class="descricao">KIT - Computador Smart Pc 80187 Intel Core i3 (4GB HD 1TB) + Monitor 18,5" Linux0</p>
-            <br><p class="preco">R$ 2.697,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-
-        <div class="produto">
-            <img src="imagens/computador01.jpeg" alt="Computador Completo Intel Core i5">
-            <p class="descricao">Computador Completo Intel Core i5 8GB ssd 240GB Microsoft Windows 10 Monitor 19.5 3green</p>
-            <br><p class="preco">R$ 1.399,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-  <!-----------------------------------CELULAR---------------------------------------------------------->
-        <div class="produto">
-            <img src="imagens/celular.jpg" alt="CELULAR APPLE IPHONE 12">
-            <p class="descricao">CELULAR APPLE IPHONE 12 64GB PURPLE GRADE A+ AMRICANO</p>
-            <br><p class="preco">R$ 2.237,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-
-        <div class="produto">
-            <img src="imagens/celular01.png" alt="Smartphone Samsung A23">
-            <p class="descricao">Smartphone Samsung A23 5G 128GB 50MP MULTICAMERAS DUAL CHIP</p>
-            <br><p class="preco">R$1.835,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-          <!-----------------------------------TABLET---------------------------------------------------------->
-
-        <div class="produto">
-            <img src="imagens/tablet.webp" alt="Tablet Samsung Galaxy Tab S6 Lite">
-            <p class="descricao">Tablet Samsung Galaxy Tab S6 Lite 64gb 4gb Ram Wifi Cor Cinza</p>
-            <br><p class="preco">R$ 1.642,99</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-
-        <div class="produto">
-            <img src="imagens/tablet01.png" alt="Tablet Samsung Galaxy Tab S9">
-            <p class="descricao">Tablet Samsung Galaxy Tab S9 FE+ Wifi 128GB 8GB RAM Tela Imersiva de 12.4" Cinza</p>
-            <br><p class="preco">R$ 2.697,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-              <!-----------------------------------CAIXA DE SOM---------------------------------------------------------->
-        </div>
-
-        <div class="produto">
-            <img src="imagens/caixa_de_som.webp" alt="Caixa Som Bluetooth">
-            <p class="descricao">Caixa Som Bluetooth Potente 5.1 Portátil </p>
-            <br><p class="preco">R$ 209,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-        <div class="produto">
-            <img src="imagens/caixa_de_som01.png" alt="Caixa De Som Bluetooth Partybox">
-            <p class="descricao">Caixa De Som Bluetooth Partybox Encore Essential 100w Jbl Cor Preto 110V/220V </p>
-            <br><p class="preco">R$ 1.319,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-          <!-----------------------------------VIDEO GAME---------------------------------------------------------->
-        <div class="produto">
-            <img src="imagens/vdeogame.webp" alt="Console Xbox 360 Slim">
-            <p class="descricao">Console Xbox 360 Slim 4GB RGH 500GB + Jogos Digitais + Kinect</p>
-            <br><p class="preco">R$ 2.259,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-
-        <div class="produto">
-            <img src="imagens/vdeogame01.webp" alt="Console Playstation 5">
-            <p class="descricao">Console Playstation 5 Edição Digital 825 GB Sony 4K</p>
-            <br><p class="preco">R$ 3.697,90</p>
-            <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-        </div>
-                  <!-----------------------------------PLACA DE VÍDEO---------------------------------------------------------->
-
-                  <div class="produto">
-                    <img src="imagens/placa_de_video.webp" alt="Placa de vídeo Nvidia Asus TUF">
-                    <p class="descricao">Placa de vídeo Nvidia Asus TUF Gaming GeForce RTX 40 Series RTX 4090 TUF-RTX4090-O24G-GAMING 24GB</p>
-                    <br><p class="preco">R$ 10.697,90</p>
-                    <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-                </div>
-
-
-                            <!-----------------------------------MEMÓRIA RAM---------------------------------------------------------->
-                            <div class="produto">
-                                <img src="imagens/memoria_ram.webp" alt="Memória RAM 16GB para Dell Precision Workstation">
-                                <p class="descricao">Memória RAM 16GB para Dell Precision Workstation T3620 MT 2RX8 PC4-2400T DDR4 UDIMM 2400MHz</p>
-                                <br><p class="preco">R$ 2.697,90</p>
-                                <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-                            </div>
-
-
-                                      <!-----------------------------------HD---------------------------------------------------------->
-                                      <div class="produto">
-                                        <img src="imagens/hd.jpg" alt="HD 500GB SATA">
-                                        <p class="descricao">HD 500GB SATA</p>
-                                        <br><p class="preco">R$ 99,90</p>
-                                        <br><p><button class="btn">Adicionar ao carrinho 🛒 </button></p>
-                                    </div>
-
 
     </main>
 
