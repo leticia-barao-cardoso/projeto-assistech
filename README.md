@@ -4,7 +4,7 @@
 Grupo: <br>
 (924112664 - Leticia Araujo)<br>
 (9241119885 - Theus)<br>
-(Leticia Cardoso)<br>
+(924113641 - Leticia Cardoso)<br>
 (Maria)<br>
 (Victor)<br>
 
