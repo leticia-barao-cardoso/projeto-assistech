@@ -5,7 +5,7 @@ Grupo: <br>
 (924112664 - Leticia Araujo)<br>
 (9241119885 - Theus)<br>
 (924113641 - Leticia Cardoso)<br>
-(Maria)<br>
+(924206290 - Maria)<br>
 (Victor)<br>
 
 Como acessar o site
