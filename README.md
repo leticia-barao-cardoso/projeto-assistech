@@ -21,3 +21,9 @@ Passo 4 - Acessar "http://localhost/phpmyadmin/"
 Passo 5 - Criar o banco de dados a partir do arquivo "loja.sql" localizado na pasta "SQL"
 
 Passo 6 - Acessar a pagina "http://localhost/ProjetoUninove/"
+
+
+
+
+Video de demonstração - https://drive.google.com/file/d/1-QhylY5XYDaxSDqLSiMOaED68fqXDlVA/view?usp=sharing
+Apresentação de Slide - https://www.canva.com/design/DAGXD2V8rHg/l4x9HvxbqSKl-CCddx6g9w/edit?utm_content=DAGXD2V8rHg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
