@@ -6,7 +6,7 @@ Grupo: <br>
 (9241119885 - Theus)<br>
 (924113641 - Leticia Cardoso)<br>
 (924206290 - Maria)<br>
-(Victor)<br>
+(323103341 - Victor)<br>
 
 Como acessar o site
 
